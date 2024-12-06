@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'HSK Panda',
   description: 'A platform for learning Chinese language',
 }
-
+export const dynamicParams = true
 export default function RootLayout({
   children,
 }: {
