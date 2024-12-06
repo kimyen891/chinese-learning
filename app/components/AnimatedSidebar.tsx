@@ -62,7 +62,7 @@ export default function AnimatedSidebar() {
                     <div className="flex flex-col gap-4">
                         <div className="w-full">
                             <Image
-                                src="/grow.jpg"
+                                src={`${process.env.NEXT_PUBLIC_PATH_IMG}/grow.jpg`}
                                 alt="Growing up With Chinese"
                                 width={400}
                                 height={300}

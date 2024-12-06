@@ -43,7 +43,7 @@ export default function AnimatedHeader() {
                     />
                     <NavbarBrand>
                         <Image
-                            src="/logo.svg"
+                            src={`${process.env.NEXT_PUBLIC_PATH_IMG}/logo.svg`}
                             alt="Panda Logo"
                             width={40}
                             height={40}

@@ -140,7 +140,7 @@ export default function Roadmap() {
       </div>
       <div className="mb-8 bg-gradient-to-r from-amber-100 to-amber-200 rounded-lg p-6 flex items-center gap-4">
         <Image
-          src="/roadmap/teacher.png"
+          src={`${process.env.NEXT_PUBLIC_PATH_IMG}/roadmap/teacher.png`}
           alt="AI Teacher"
           width={60}
           height={60}
@@ -182,7 +182,7 @@ export default function Roadmap() {
                 </div>
                 <div className="ml-6">
                   <Image
-                    src={item.img}
+                    src={`${process.env.NEXT_PUBLIC_PATH_IMG}${item.img}`}
                     alt="Panda mascot"
                     width={100}
                     height={100}

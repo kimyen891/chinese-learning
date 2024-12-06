@@ -67,7 +67,7 @@ function HomeContent() {
           <div className="container mx-auto flex flex-col items-center gap-6 xl:gap-10">
             <div className="w-full">
               <Image
-                src="/discount.jpg"
+                src={`${process.env.NEXT_PUBLIC_PATH_IMG}/discount.jpg`}
                 alt="Special Offer"
                 width={400}
                 height={300}
@@ -147,7 +147,7 @@ function HomeContent() {
             >
               <div className="relative w-full h-48">
                 <Image
-                  src={card.image}
+                  src={`${process.env.NEXT_PUBLIC_PATH_IMG}${card.image}`}
                   alt={card.chinese}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
