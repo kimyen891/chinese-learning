@@ -45,7 +45,7 @@ export default function AnimatedSidebar() {
                     {courseLinks.map((course, index) => (
                         <li key={index}>
                             <Link
-                                href={`/course/${course.slug}`}
+                                href={`/course?code=${course.slug}`}
                                 className="flex items-center hover:text-[#689F38] transition-colors cursor-pointer group"
                             >
                                 <span className="mr-2 group-hover:scale-110 transition-transform">⭐️</span>
