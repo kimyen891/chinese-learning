@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "/chinese-learning",
     images: {
         remotePatterns: [
             {
