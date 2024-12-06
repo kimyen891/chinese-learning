@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { LockClosedIcon } from '@heroicons/react/24/solid';
@@ -142,7 +142,7 @@ const courseData = {
                 question: "选择正的语法结构: '虽然..., 但是...'",
                 options: [
                     "A. 虽然今天下雨，但是我去上班",
-                    "B. 虽然今天下雨，我去上班但是",
+                    "B. 虽然今天下雨���我去上班但是",
                     "C. 但是今天下雨，虽然我去上班",
                     "D. 今天下雨虽然，但是我去上班"
                 ],
@@ -172,7 +172,7 @@ const courseData = {
             },
             {
                 id: 4,
-                question: "'一边...一边...' ��正确用法：",
+                question: "'一边...一边...' 正确用法：",
                 options: [
                     "A. 他一边走路一边听音乐",
                     "B. 他一边走路听音乐一边",
@@ -208,7 +208,7 @@ const courseData = {
                 question: "选择正确的程度补语：",
                 options: [
                     "A. 他跑得很快",
-                    "B. 他��很快得",
+                    "B. 他很快得",
                     "C. 他得跑很快",
                     "D. 他很快跑得"
                 ],
@@ -365,7 +365,7 @@ const courseData = {
             },
             {
                 id: 10,
-                question: "在饭店如何���服务员？",
+                question: "在饭店如何服务员？",
                 options: [
                     "A. 服务员，麻烦您",
                     "B. 喂，服务员",
@@ -389,7 +389,7 @@ const courseData = {
     }
 };
 
-export default function CoursePage() {
+function CourseContent() {
     const searchParams = useSearchParams();
     const code = searchParams.get('code') as string;
     const course = courseData[code as keyof typeof courseData];
@@ -529,5 +529,15 @@ export default function CoursePage() {
                 </div>
             </div>
         </motion.div>
+    );
+}
+
+export default function CoursePage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">
+            <h1 className="text-2xl text-gray-600">Đang tải...</h1>
+        </div>}>
+            <CourseContent />
+        </Suspense>
     );
 }
